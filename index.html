@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A SPECIAL EFFORT FOR YOU , JAYA ✨❤️</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffd1dc);
+            color: white;
+        }
+
+        h1 {
+            margin-top: 120px;
+            font-size: 50px;
+            text-shadow: 0 0 15px #ff69b4;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 15px;
+            border: none;
+            background: white;
+            color: #ff4d88;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Surprise message animation */
+        #message {
+            font-size: 28px;
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.5s ease;
+        }
+
+        #message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 24px;
+            animation: floatUp 6s linear forwards;
+            z-index: 999;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MADE THIS SPECIALLY FOR YOU JAYA 🩷 </h1>
+    <p>Click to see your surprise 💖</p>
+
+    <button onclick="showWish()">Click to see surprise</button>
+
+    <div id="message">
+        JUST WANTED YOU TO KNOW THAT YOU ARE THE BEST PERSON I HAVE EVER MET🌛❤️ <br>
+        YOU ARE REALLY VERY SPECIAL AND I WISH FOR YOUR BEST FUTURE AND FOR YOUR HAPPINESS , LOTS OF LOVE FOR YOU JAYA💕🌼 I WILL ALWAYS BE THERE FOR YOU 🌞 THE MOMENTS WHICH I SPENT WITH YOU , THEY ARE REALLY VERY SPECIAL AND MEMORABLE FOR ME ✨ HOPING TO SEE YOU SOON AGAIN AND THIS TIME WE WILL CREATE MORE BEAUTIFUL MEMORIES 🩷🩷
+    </div>
+
+    <script>
+        function showWish() {
+            // Cute arrival animation (not instant)
+            document.getElementById("message").classList.add("show");
+        }
+
+        // Floating red hearts generator
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (20 + Math.random() * 25) + "px";
+            heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        // Create hearts continuously
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
